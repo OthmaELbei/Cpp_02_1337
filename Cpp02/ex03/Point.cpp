@@ -1,33 +1,38 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   Fixed.hpp                                          :+:      :+:    :+:   */
+/*   Point.cpp                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2025/11/09 17:01:31 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/17 10:02:14 by oelbied          ###   ########.fr       */
+/*   Created: 2025/11/17 14:04:23 by oelbied           #+#    #+#             */
+/*   Updated: 2025/11/17 14:50:50 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FIXED_HPP
-#define FIXED_HPP
+#include "Point.hpp"
 
+Point::Point() : x(0), y(0) 
+{}
 
-#include <iostream>
+Point::Point(float dx, float fy) : x(dx), y(fy)
+{}
 
-class Fixed
+Point::Point(Point const &other) : x(other.x), y(other.y)
+{}
+
+Point &Point::operator=(const Point &other)
 {
-private:
-   int fix_point ;
-   static const int fixd = 8;
-public:
-    Fixed();
-    ~Fixed();
-    Fixed(const Fixed &other);
-    Fixed& operator = (const Fixed &other);
-  int  getRawBits( void ) const;
-  void setRawBits( int const raw );
-};
+    (void)other;
+    return *this;
+}
 
-#endif
+float Point::getx() const
+{
+    return x.toFloat();
+}
+
+float Point::gety() const
+{
+    return y.toFloat();
+}

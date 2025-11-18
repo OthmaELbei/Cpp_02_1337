@@ -6,13 +6,13 @@
 #    By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2025/11/09 17:27:22 by oelbied           #+#    #+#              #
-#    Updated: 2025/11/09 17:27:33 by oelbied          ###   ########.fr        #
+#    Updated: 2025/11/17 15:07:29 by oelbied          ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 CC = c++
 CFLAGS = -Wall -Wextra -Werror -std=c++98
-FILES = Fixed.cpp  main.cpp
+FILES = Fixed.cpp  main.cpp Point.cpp bsp.cpp
 
 OPJECT = $(FILES:.cpp=.o)
 
@@ -23,7 +23,7 @@ all : $(NAME)
 $(NAME): $(OPJECT)
 	$(CC) $(CFLAGS) $(OPJECT) -o $(NAME)
 
-%.o: %.cpp Fixed.hpp
+%.o: %.cpp Fixed.hpp Point.hpp
 	$(CC) $(CFLAGS) -c $< -o $@
 
 clean:
