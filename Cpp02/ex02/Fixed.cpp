@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 17:15:01 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/17 11:21:14 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:07:49 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -34,14 +34,28 @@ const Fixed &Fixed::max(const Fixed &a, const Fixed &b)
   if (a.fix_point > b.fix_point)
     return a;
   else
-  return b;
+    return b;
 }
 const Fixed &Fixed::min(const Fixed &a, const Fixed &b)
 {
   if (a.fix_point < b.fix_point)
     return a;
   else
-  return b;
+    return b;
+}
+Fixed &Fixed::max(Fixed &a, Fixed &b)
+{
+  if (a.fix_point > b.fix_point)
+    return a;
+  else
+    return b;
+}
+Fixed &Fixed::min(Fixed &a, Fixed &b)
+{
+  if (a.fix_point < b.fix_point)
+    return a;
+  else
+    return b;
 }
 Fixed::Fixed(const float value)
 {
@@ -49,52 +63,46 @@ Fixed::Fixed(const float value)
 }
 Fixed::Fixed()
 {
-    fix_point = 0;
+  fix_point = 0;
 }
-
 
 Fixed Fixed::operator*(const Fixed &other) const
 {
-  Fixed result;
-  result.fix_point = ((long long)this->fix_point * other.fix_point) >> fixd;
+  Fixed result(this->toFloat() * other.toFloat());
   return result;
 }
 
-bool Fixed::operator > (const Fixed &other) const
+bool Fixed::operator>(const Fixed &other) const
 {
- 
+
   return (this->fix_point > other.fix_point);
- 
-}bool Fixed::operator < (const Fixed &other) const
+}
+bool Fixed::operator<(const Fixed &other) const
 {
- 
+
   return (this->fix_point < other.fix_point);
- 
-}bool Fixed::operator >= (const Fixed &other) const
+}
+bool Fixed::operator>=(const Fixed &other) const
 {
- 
+
   return (this->fix_point >= other.fix_point);
- 
 }
-bool Fixed::operator <= (const Fixed &other) const
+bool Fixed::operator<=(const Fixed &other) const
 {
- 
+
   return (this->fix_point <= other.fix_point);
- 
 }
 
-bool Fixed::operator == (const Fixed &other) const
+bool Fixed::operator==(const Fixed &other) const
 {
- 
+
   return (this->fix_point == other.fix_point);
- 
 }
 
-bool Fixed::operator != (const Fixed &other) const
+bool Fixed::operator!=(const Fixed &other) const
 {
- 
+
   return (this->fix_point != other.fix_point);
- 
 }
 
 Fixed Fixed::operator+(const Fixed &other) const
@@ -111,8 +119,7 @@ Fixed Fixed::operator-(const Fixed &other) const
 }
 Fixed Fixed::operator/(const Fixed &other) const
 {
-  Fixed result;
-  result.fix_point = ((long long)this->fix_point << fixd )/ other.fix_point;
+  Fixed result(this->toFloat() / other.toFloat());
   return result;
 }
 

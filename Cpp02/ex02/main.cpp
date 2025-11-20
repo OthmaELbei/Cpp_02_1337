@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/07 17:39:31 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/17 11:26:15 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:04:10 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,3 @@ std::cout << b << std::endl;
 std::cout << Fixed::max( a, b ) << std::endl;
 return 0;
 }
-// std::cout << a++ << std::endl;
-// std::cout << a << std::endl;
-// std::cout << b << std::endl;
-// std::cout << Fixed::max( a, b ) << std::endl;

@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 17:18:53 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/17 11:12:45 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:04:00 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -43,6 +43,8 @@ public:
   int toInt(void) const;
   static const Fixed &max(const Fixed &a, const Fixed &b);
   static const Fixed &min(const Fixed &a, const Fixed &b);
+  static  Fixed &max( Fixed &a,Fixed &b);
+  static  Fixed &min( Fixed &a,  Fixed &b);
 };
 std::ostream &operator<<(std::ostream &out, const Fixed &fi);
 #endif

@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/06 16:30:41 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/09 17:11:58 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/11/19 13:03:09 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,6 +20,7 @@
       Fixed const c(42.42f);
       Fixed const d(b);
       a = Fixed(1234.4321f);
+      
       std::cout << "a is " << a << std::endl;
       std::cout << "b is " << b << std::endl;
       std::cout << "c is " << c << std::endl;
@@ -30,3 +31,5 @@
       std::cout << "d is " << d.toInt() << " as integer" << std::endl;
       return 0;
   }
+
+  

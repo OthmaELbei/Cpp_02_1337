@@ -6,22 +6,26 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/09 17:10:12 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/17 11:05:40 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/11/20 11:35:59 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+
+/// 101.11000000   <<  
+
+/// ..........................101|11......
 #include "Fixed.hpp"
 
   Fixed::Fixed(const int value)
   {
      std::cout<< "Int constructor called" << std::endl;
-     fix_point = value << fixd;
+     fix_point = value << fixd; 
     
   } 
   Fixed::Fixed(const float value)
   {
      std::cout<< "Float constructor called" << std::endl;
-     fix_point = roundf(value * (1 << fixd));
+     fix_point = roundf(value * (1 << fixd)); 
   }
  float Fixed::toFloat( void ) const
  {
@@ -58,9 +62,8 @@ Fixed::Fixed(const Fixed &other)
     *this = other;
 }
 
-  std::ostream &operator << (std::ostream &out, const Fixed &fi)
+std::ostream &operator << (std::ostream &out, const Fixed &fi)
 {
     out << fi.toFloat();
     return out;
 }
-

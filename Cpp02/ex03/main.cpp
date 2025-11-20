@@ -6,7 +6,7 @@
 /*   By: oelbied <oelbied@student.42.fr>            +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/11/08 10:51:56 by oelbied           #+#    #+#             */
-/*   Updated: 2025/11/17 15:04:47 by oelbied          ###   ########.fr       */
+/*   Updated: 2025/11/19 11:18:37 by oelbied          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,7 +18,7 @@ int main()
     Point a(0, 0);
     Point b(4, 0);
     Point c(2, 3);
-    Point poin(1, 1);
+    Point poin(6, 1);
 
     std::cout << bsp(a, b, c, poin) << std::endl;
 
